@@ -1,0 +1,56 @@
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --bg:           #F5F5F0;
+  --surface:      #FFFFFF;
+  --surface2:     #F0F0EA;
+  --border:       #D8D8D0;
+  --border-dark:  #B0B0A8;
+
+  --accent:       #1A56DB;
+  --accent-light: #EBF0FF;
+  --accent-hover: #1344B8;
+
+  --danger:       #CC2222;
+  --danger-light: #FFF0F0;
+
+  --success:      #1A7A3A;
+  --success-light:#F0FFF4;
+
+  --text:         #1A1A1A;
+  --text-muted:   #5A5A5A;
+  --text-faint:   #9A9A9A;
+
+  --radius:       14px;
+  --radius-sm:    10px;
+  --radius-xs:    7px;
+
+  --shadow:       0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:    0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* ── BASE ── */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  font-size: 17px;
+}

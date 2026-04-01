@@ -1,0 +1,83 @@
+.header {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── MANAGE ── */
+.manageBtn {
+  height: 42px;
+  padding: 0 18px;
+  border: 2px solid var(--border-dark);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.manageBtn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+.manageBtnActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.manageBtnActive:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+
+/* ── LOGOUT ── */
+.logoutBtn {
+  height: 42px;
+  padding: 0 16px;
+  border: 2px solid var(--border-dark);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.logoutBtn:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-light); }
+
+/* ── MANAGE BANNER ── */
+.manageBanner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 11px 20px;
+  background: var(--accent-light);
+  border-top: 1.5px solid #c0d4ff;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1.4;
+}

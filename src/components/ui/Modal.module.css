@@ -1,0 +1,117 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.sheet {
+  background: var(--surface);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-top: 2px solid var(--border);
+  width: 100%;
+  max-width: 640px;
+  padding: 20px 24px 40px;
+  animation: slideUp 0.28s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border-dark);
+  border-radius: 2px;
+  margin: 0 auto 24px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 18px;
+  outline: none;
+  margin-bottom: 28px;
+  transition: border-color 0.2s;
+}
+
+.input::placeholder { color: var(--text-faint); }
+.input:focus { border-color: var(--accent); }
+.input:disabled { background: var(--surface2); }
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelBtn {
+  flex: 1;
+  height: 54px;
+  border: 2px solid var(--border-dark);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 17px;
+  font-weight: 600;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cancelBtn:hover { background: var(--surface2); }
+.cancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.confirmBtn {
+  flex: 2;
+  height: 54px;
+  border: none;
+  border-radius: 50px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  transition: background 0.15s, opacity 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.confirmBtn:hover:not(:disabled) { background: var(--accent-hover); }
+.confirmBtn:disabled { opacity: 0.45; cursor: not-allowed; }

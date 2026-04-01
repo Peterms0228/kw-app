@@ -1,0 +1,173 @@
+.card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.expanded  { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,86,219,0.08), var(--shadow-md); }
+.manageMode { border-color: #e09000; }
+.manageMode.expanded { box-shadow: 0 0 0 3px rgba(224,144,0,0.10), var(--shadow-md); }
+
+/* header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 16px 12px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.infoBtn {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.catName {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catMeta { display: block; font-size: 14px; color: var(--text-muted); }
+
+.chevron {
+  font-size: 22px;
+  color: var(--text-faint);
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+  flex-shrink: 0;
+  user-select: none;
+}
+.chevronOpen { transform: rotate(180deg); color: var(--accent); }
+
+/* delete */
+.deleteArea { padding: 0 16px 14px; }
+
+.deleteBtn {
+  height: 40px; padding: 0 16px;
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  background: transparent; color: var(--text-muted);
+  font-size: 14px; font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.deleteBtn:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-light); }
+
+.confirmRow { display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.confirmText { font-size: 14px; font-weight: 600; color: var(--danger); flex: 1; min-width: 200px; line-height: 1.4; }
+.confirmYes {
+  height: 40px; padding: 0 16px; border: none; border-radius: var(--radius-xs);
+  background: var(--danger); color: #fff; font-size: 14px; font-weight: 600;
+  white-space: nowrap; -webkit-tap-highlight-color: transparent;
+}
+.confirmNo {
+  height: 40px; padding: 0 14px; border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-xs); background: transparent; color: var(--text-muted);
+  font-size: 14px; white-space: nowrap; -webkit-tap-highlight-color: transparent;
+}
+
+/* body */
+.body { border-top: 2px solid var(--border); background: var(--bg); }
+
+.modelList { display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+
+.empty {
+  padding: 24px 16px 8px;
+  font-size: 16px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* add model */
+.addModelArea {
+  padding: 10px 12px 14px;
+  border-top: 1.5px solid var(--border);
+}
+
+.addModelBtn {
+  width: 100%;
+  height: 46px;
+  border: 2px dashed var(--border-dark);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.addModelBtn:hover { background: var(--accent-light); border-color: var(--accent); }
+
+.addModelForm {
+  background: var(--accent-light);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addModelInput {
+  height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.addModelInput:focus { border-color: var(--accent); }
+.addModelInput::placeholder { color: var(--text-faint); }
+.addModelInput:disabled { opacity: 0.6; }
+
+.addModelActions { display: flex; gap: 10px; }
+
+.cancelBtn {
+  flex: 1; height: 46px; border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-sm); background: var(--surface);
+  color: var(--text-muted); font-size: 15px; font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+}
+.cancelBtn:hover { background: var(--surface2); }
+
+.saveBtn {
+  flex: 2; height: 46px; border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff;
+  font-size: 15px; font-weight: 700;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s, opacity 0.15s;
+}
+.saveBtn:hover:not(:disabled) { background: var(--accent-hover); }
+.saveBtn:disabled { opacity: 0.45; cursor: not-allowed; }

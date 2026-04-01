@@ -1,0 +1,86 @@
+.card {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.expanded  { border-color: var(--accent); }
+.manageMode { border-color: #e09000; }
+.manageMode.expanded { border-color: #e09000; }
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.header:active { background: var(--surface2); }
+
+.info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta { font-size: 13px; color: var(--text-muted); }
+
+.chevron {
+  font-size: 20px;
+  color: var(--text-faint);
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+  flex-shrink: 0;
+  user-select: none;
+}
+.chevronOpen { transform: rotate(180deg); color: var(--accent); }
+
+/* delete */
+.deleteArea { padding: 0 16px 12px; }
+
+.deleteBtn {
+  height: 38px;
+  padding: 0 14px;
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.deleteBtn:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-light); }
+
+.confirmRow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.confirmText { font-size: 14px; font-weight: 600; color: var(--danger); }
+.confirmYes {
+  height: 38px; padding: 0 14px; border: none; border-radius: var(--radius-xs);
+  background: var(--danger); color: #fff; font-size: 14px; font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+}
+.confirmNo {
+  height: 38px; padding: 0 14px; border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-xs); background: transparent; color: var(--text-muted);
+  font-size: 14px; -webkit-tap-highlight-color: transparent;
+}
+
+/* body */
+.body { border-top: 1.5px solid var(--border); background: var(--surface); }
+.stockList { display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+.empty {
+  padding: 20px 16px 8px;
+  font-size: 15px;
+  color: var(--text-muted);
+  text-align: center;
+}
